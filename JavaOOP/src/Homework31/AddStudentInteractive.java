@@ -113,12 +113,15 @@ public class AddStudentInteractive implements AddStudent  {
 		}
 		
 		try{
-		group.addStudent(new Student(firstName, lastName, sex, age, gpa));
+			reader.close();
+			group.addStudent(new Student(firstName, lastName, sex, age, gpa));
 		}
-		catch (OutOfFreePlacesException e)
+		catch (OutOfFreePlacesException | IOException e)
+		
 		{
 			System.out.println(e);
 		}
+		
 		
 
 	
