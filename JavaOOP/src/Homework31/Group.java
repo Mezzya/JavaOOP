@@ -1,10 +1,17 @@
 package Homework31;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.TreeSet;
 
-public class Group {
-	private TreeSet<Student> set = new TreeSet<Student>(new Sort());
+public class Group implements Voenkom {
+
+	private TreeSet<Student> set = new TreeSet<Student>((a, b) -> a.getFirsName().compareTo(b.getFirsName()));
 	private String groupName;
 	private String univerName;
 
@@ -32,6 +39,10 @@ public class Group {
 
 	public void setUniverName(String univerName) {
 		this.univerName = univerName;
+	}
+
+	public void add(AddStudent as) {
+		as.addstudent(this);
 	}
 
 	public void addStudent(Student student) throws OutOfFreePlacesException {
@@ -77,6 +88,48 @@ public class Group {
 			return "Группа переполнена";
 		}
 
+	}
+
+	public void sort(int key) {
+		// 1- по имени, 2 по фамилии, 3 по возрасту, 4 по среднему баллу
+		TreeSet setTemp = null;
+		;
+
+		switch (key) {
+		case 1:
+			setTemp = new TreeSet<Student>((a, b) -> a.getFirsName().compareTo(b.getFirsName()));
+
+			break;
+		case 2:
+			setTemp = new TreeSet<Student>((a, b) -> a.getLastName().compareTo(b.getLastName()));
+
+			break;
+		case 3:
+			setTemp = new TreeSet<Student>((a, b) -> a.getAge() - b.getAge());
+
+			break;
+		case 4:
+			setTemp = new TreeSet<Student>((a, b) -> (int) (a.getGpa() - b.getGpa()));
+
+			break;
+		}
+
+		if (setTemp != null) {
+			// Выбор сортировки сделан
+			setTemp.addAll(set);
+			set = setTemp;
+		}
+
+	}
+
+	@Override
+	public Student[] getArrayForVoenkom() {
+		// TODO Auto-generated method stub
+		Student[] soldiers = new Student[set.size()];
+
+		soldiers = set.stream().filter(a -> (a.getAge() > 18)&&a.isSex()).toArray(Student[]::new);
+
+		return soldiers;
 	}
 
 	@Override

@@ -1,5 +1,7 @@
 package Homework31;
 
+import java.util.Arrays;
+
 import Homework31.Group.OutOfFreePlacesException;
 
 public class Main {
@@ -42,10 +44,12 @@ public class Main {
 			group.addStudent(stu7);
 			group.addStudent(stu8);
 			group.addStudent(stu9);
-			// // А можно и так добавить
-			group.addStudent(new Student("Лара", "Крофт", false, 16, 4));
+			 // А можно и так добавить
+//			group.addStudent(new Student("Лара", "Крофт", false, 16, 4));
 			// А этот не влезит места нет
-			group.addStudent(stu11);
+//			group.addStudent(stu11);
+			
+			group.add(new AddStudentInteractive());
 
 		} catch (OutOfFreePlacesException e) {
 			System.out.println(e);
@@ -58,6 +62,13 @@ public class Main {
 
 		group.delStudent(stu11);
 
+//		Сортировка по полям (1-4 Имя, Фамилия, пол, возраст, средний балл)
+		group.sort(4);
+		
+		
+//		Военком
+		System.out.println(Arrays.toString(group.getArrayForVoenkom()));
+		
 		System.out.println();
 		
 //		Вывод группы
