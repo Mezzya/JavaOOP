@@ -42,8 +42,11 @@ public class Main {
 		} catch (IOException e) {
 			System.out.println(e);
 		}
+<<<<<<< HEAD
 //		temp
 //		temp pc 22
+=======
+>>>>>>> parent of 476cac2... test
 
 	}
 
