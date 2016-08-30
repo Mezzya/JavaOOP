@@ -42,8 +42,7 @@ public class Main {
 		} catch (IOException e) {
 			System.out.println(e);
 		}
-		
-//		NOUT
+//		temp
 
 	}
 
