@@ -99,10 +99,10 @@ public class FileManager {
 		long start = System.currentTimeMillis();
 	
 		for (File file : files) {
-
+			
 			try (FileInputStream fis = new FileInputStream(file);
 					FileOutputStream fos = new FileOutputStream(
-							new File(out.getAbsolutePath() + File.pathSeparator + file.getName()))) {
+							new File(in.getAbsolutePath() + File.separator + file.getName()))) {
 				byte[] buff = new byte[1024];
 				int colRead = 0;
 				

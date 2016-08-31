@@ -22,6 +22,8 @@ public class Main {
 		} catch (IOException e) {
 			System.out.println(e);
 		}
+		
+		System.out.println(File.separator);
 
 	}
 
