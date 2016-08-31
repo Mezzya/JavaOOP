@@ -33,9 +33,7 @@ public class Main {
 			System.err.println(dirIn + " не директория");
 			return;
 		}
-//		System.out.println("Только файлы");
-//		System.out.println(Arrays.toString(dirOut.listFiles()));
-//		System.out.println("Запустим наш обработчик");
+
 
 		FileManager fm = new FileManager();
 		String[] arg = { "txt", "bmp", "jpg" };

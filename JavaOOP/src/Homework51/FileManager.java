@@ -93,6 +93,7 @@ public class FileManager {
 			}
 
 		}
+		
 		Date end = new Date();
 
 		printResult(copyCount, notCopyCount, end.getTime() - start.getTime());
