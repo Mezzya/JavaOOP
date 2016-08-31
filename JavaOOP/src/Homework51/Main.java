@@ -3,7 +3,9 @@ package Homework51;
 import java.io.File;
 import java.io.FilenameFilter;
 import java.io.IOException;
+import java.sql.Time;
 import java.util.Arrays;
+import java.util.Date;
 
 public class Main {
 
@@ -31,23 +33,26 @@ public class Main {
 			System.err.println(dirIn + " не директория");
 			return;
 		}
-		System.out.println("Только файлы");
-		System.out.println(Arrays.toString(dirOut.listFiles()));
-		System.out.println("Запустим наш обработчик");
+
 
 		FileManager fm = new FileManager();
-		String[] arg = { "txt", "bmp" };
+		String[] arg = { "txt", "bmp", "jpg" };
 		try {
+		
 			fm.copyMaskNio(dirOut, dirIn, arg, false);
+			
+		
+			
+			fm.copyMaskIo(dirOut, dirIn, arg);
+			
+			
+			
 		} catch (IOException e) {
 			System.out.println(e);
 		}
-<<<<<<< HEAD
-//		temp
-//		temp pc 22
-=======
->>>>>>> parent of 476cac2... test
 
+		
+		
 	}
 
 }
