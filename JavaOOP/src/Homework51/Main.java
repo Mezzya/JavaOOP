@@ -7,6 +7,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
 
 		File dirOut = new File("/home/mezz/Documents/OUT");
 		File dirIn = new File("/home/mezz/Documents/IN");

@@ -16,6 +16,7 @@ public class FileManager {
 	private FileManager() {
 		super();
 		// Нехочу чтобы создавался экземпляр класса
+		
 	}
 
 	
