@@ -10,11 +10,12 @@ public class Main {
 public static void main(String[] args)
 {
 
-	File fileOne = new File("d:\\temp\\fileone.txt");
-	File fileTwo = new File("d:\\temp\\filetwo.txt");
-	FindDublicate fd = new FindDublicate();
+	File fileOne = new File("/home/mezz/Documents/IN/fileone.txt");
+	File fileTwo = new File("/home/mezz/Documents/IN/filetwo.txt");
+	File fileResult = new File("/home/mezz/Documents/IN/result.txt");
 	
-	fd.load(fileOne, fileTwo);
+	
+	FindDublicate.findAndWrite(fileOne, fileTwo, fileResult);
 	
 
 }
