@@ -20,7 +20,7 @@ public class Main {
 
 	public static int[] generateArray() {
 		Random rn = new Random();
-		int[] array = new int[5 + rn.nextInt(11)];
+		int[] array = new int[1 + rn.nextInt(5)];
 		for (int i = 0; i < array.length; i++) {
 			array[i] = rn.nextInt(10);
 		}
@@ -29,30 +29,28 @@ public class Main {
 	}
 
 	
-public static int getSum(int[] a, int[] b, int[] c) {
+public static int getSum(int[]... a) {
 
-		for (int i = 0, j = 0, sum = 0;; i++) {
+	
+		for (int i = 0, j=0, sum=0; ; i++) {
+			
+			try{
+				int temp=a[j][0];
+			}
+			catch (IndexOutOfBoundsException e)
+			{
+				System.out.println("Закочились масивы в масиве");
+				return sum;
+			}
+			
 			try {
-				sum += a[i];
+				sum += a[j][i];
+				
 			} catch (IndexOutOfBoundsException e) {
-				System.out.println("Количество " + i);
-
-				if (j == 2) {
-
-					return sum;
-				}
-
-				if (j == 1) {
-					j++;
-					a = c;
-				}
-				if (j == 0) {
-					a = b;
-					j++;
-
-				}
-				i = -1;
-
+				
+				System.out.println("Конец масива №"+i);
+				j++;
+				i=-1;
 			}
 
 		}
