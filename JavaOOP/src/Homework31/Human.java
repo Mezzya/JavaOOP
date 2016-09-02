@@ -20,8 +20,8 @@ public class Human {
 
 	public Human() {
 		super();
-		this.firsName = "Неизвестно";
-		this.lastName = "Неизвестно";
+		this.firsName = "РќРµРёР·РІРµСЃС‚РЅРѕ";
+		this.lastName = "РќРµРёР·РІРµСЃС‚РЅРѕ";
 
 	}
 
@@ -55,19 +55,19 @@ public class Human {
 
 	public void setAge(int age) throws IllegalArgumentException {
 		if (age < this.age)
-			throw new IllegalArgumentException("Невозможно установить возраст меньше чем он есть");
+			throw new IllegalArgumentException("РќРµРІРѕР·РјРѕР¶РЅРѕ СѓСЃС‚Р°РЅРѕРІРёС‚СЊ РІРѕР·СЂР°СЃС‚ РјРµРЅСЊС€Рµ С‡РµРј РѕРЅ РµСЃС‚СЊ");
 
 		if (age < 0)
-			throw new IllegalArgumentException("Невозможно установить возраст меньше меньше ноля");
+			throw new IllegalArgumentException("РќРµРІРѕР·РјРѕР¶РЅРѕ СѓСЃС‚Р°РЅРѕРІРёС‚СЊ РІРѕР·СЂР°СЃС‚ РјРµРЅСЊС€Рµ РјРµРЅСЊС€Рµ РЅРѕР»СЏ");
 		if (age > 150)
-			throw new IllegalArgumentException("Маловероятный возраст для человека");
+			throw new IllegalArgumentException("РњР°Р»РѕРІРµСЂРѕСЏС‚РЅС‹Р№ РІРѕР·СЂР°СЃС‚ РґР»СЏ С‡РµР»РѕРІРµРєР°");
 
 		this.age = age;
 	}
 
 	@Override
 	public String toString() {
-		return lastName + " " + firsName + ", Пол=" + (sex ? "Мужской" : "Женский") + ", Возраст=" + age + "";
+		return lastName + " " + firsName + ", РџРѕР»=" + (sex ? "РњСѓР¶СЃРєРѕР№" : "Р–РµРЅСЃРєРёР№") + ", Р’РѕР·СЂР°СЃС‚=" + age + "";
 	}
 
 }

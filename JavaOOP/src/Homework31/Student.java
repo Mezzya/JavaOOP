@@ -1,7 +1,7 @@
 package Homework31;
 
 public class Student extends Human {
-	private double gpa; // Средний балл
+	private double gpa; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 
 	public Student() {
 		super();
@@ -9,7 +9,7 @@ public class Student extends Human {
 
 	}
 
-	public Student(String firsName, String lastName, boolean sex, int age, int gpa) {
+	public Student(String firsName, String lastName, boolean sex, int age, double gpa) {
 		super(firsName, lastName, sex, age);
 		setGpa(gpa);
 	}
@@ -24,19 +24,19 @@ public class Student extends Human {
 		return gpa;
 	}
 
-	public void setGpa(int gpa) throws IllegalArgumentException {
+	public void setGpa(double gpa) throws IllegalArgumentException {
 
 		if (gpa < 0)
-			throw new IllegalArgumentException("Средний балл не может быть меньше 0");
+			throw new IllegalArgumentException("РЎСЂРµРґРЅРёР№ Р±Р°Р»Р» РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РјРµРЅСЊС€Рµ 0");
 		if (gpa > 5)
-			throw new IllegalArgumentException("Средний балл не может быть больше 5");
+			throw new IllegalArgumentException("РЎСЂРµРґРЅРёР№ Р±Р°Р»Р» РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ Р±РѕР»СЊС€Рµ 5");
 
 		this.gpa = gpa;
 	}
 
 	@Override
 	public String toString() {
-		return "Студент " + super.toString() + " gpa=" + gpa + "";
+		return "РЎС‚СѓРґРµРЅС‚ " + super.toString() + " gpa=" + gpa + "";
 	}
 
 }

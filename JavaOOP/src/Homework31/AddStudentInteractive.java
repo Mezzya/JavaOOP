@@ -21,63 +21,63 @@ public class AddStudentInteractive implements AddStudent  {
 
 		while (true) {
 			try {
-				System.out.print("Введите имя:");
+				System.out.print("Р’РІРµРґРёС‚Рµ РёРјСЏ:");
 				firstName = reader.readLine();
 				if (firstName != null && !firstName.equals(""))
 					break;
 			} catch (IOException e) {
-				System.err.println("Неверно введено имя. Повторите попытку.");
+				System.err.println("РќРµРІРµСЂРЅРѕ РІРІРµРґРµРЅРѕ РёРјСЏ. РџРѕРІС‚РѕСЂРёС‚Рµ РїРѕРїС‹С‚РєСѓ.");
 			}
 		}
 
 		while (true) {
 			try {
-				System.out.print("Введите фамилию:");
+				System.out.print("Р’РІРµРґРёС‚Рµ С„Р°РјРёР»РёСЋ:");
 				lastName = reader.readLine();
 				if (lastName != null && !lastName.equals(""))
 					break;
 			} catch (IOException e) {
-				System.err.println("Неверно введена Фамилия. Повторите попытку.");
+				System.err.println("РќРµРІРµСЂРЅРѕ РІРІРµРґРµРЅР° Р¤Р°РјРёР»РёСЏ. РџРѕРІС‚РѕСЂРёС‚Рµ РїРѕРїС‹С‚РєСѓ.");
 			}
 		}
 
 		while (true) {
 			try {
-				System.out.print("Введите пол (м/ж):");
+				System.out.print("Р’РІРµРґРёС‚Рµ РїРѕР» (Рј/Р¶):");
 				tempSex = reader.readLine();
 				if (tempSex != null && !tempSex.equals(""))
 				{
-					if (tempSex.equalsIgnoreCase("м"))
+					if (tempSex.equalsIgnoreCase("Рј"))
 					{
 						sex=true;
 						break;
 					}
-					if (tempSex.equalsIgnoreCase("ж"))
+					if (tempSex.equalsIgnoreCase("Р¶"))
 					{
 						sex=false;
 						break;
 					}
 					
 				}
-				System.err.println("Неверно введен пол. Повторите попытку.");
+				System.err.println("РќРµРІРµСЂРЅРѕ РІРІРµРґРµРЅ РїРѕР». РџРѕРІС‚РѕСЂРёС‚Рµ РїРѕРїС‹С‚РєСѓ.");
 					
 			} catch (IOException e) {
-				System.err.println("Неверно введен пол. Повторите попытку.");
+				System.err.println("РќРµРІРµСЂРЅРѕ РІРІРµРґРµРЅ РїРѕР». РџРѕРІС‚РѕСЂРёС‚Рµ РїРѕРїС‹С‚РєСѓ.");
 			}
 		}
 		
 		while (true) {
 			try {
-				System.out.print("Введите возраст:");
+				System.out.print("Р’РІРµРґРёС‚Рµ РІРѕР·СЂР°СЃС‚:");
 				
 				age= Integer.parseInt(reader.readLine());
 					if (age<0) 			{
-						System.err.println("Возраст должен быть положительным числом");
+						System.err.println("Р’РѕР·СЂР°СЃС‚ РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ РїРѕР»РѕР¶РёС‚РµР»СЊРЅС‹Рј С‡РёСЃР»РѕРј");
 						continue;
 					}
 					if (age>120)
 					{
-						System.err.println("Возраст должен быть меньше 120 лет");
+						System.err.println("Р’РѕР·СЂР°СЃС‚ РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ РјРµРЅСЊС€Рµ 120 Р»РµС‚");
 						continue;
 					}
 					
@@ -85,22 +85,22 @@ public class AddStudentInteractive implements AddStudent  {
 				break;
 					
 			} catch (IOException e) {
-				System.err.println("Возраст должен быть числом. Попробуйте еще раз.");
+				System.err.println("Р’РѕР·СЂР°СЃС‚ РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ С‡РёСЃР»РѕРј. РџРѕРїСЂРѕР±СѓР№С‚Рµ РµС‰Рµ СЂР°Р·.");
 			}
 		}
 		
 		while (true) {
 			try {
-				System.out.print("Введите средний балл:");
+				System.out.print("Р’РІРµРґРёС‚Рµ СЃСЂРµРґРЅРёР№ Р±Р°Р»Р»:");
 				
 				gpa= Integer.parseInt(reader.readLine());
 					if (gpa<0) 			{
-						System.err.println("Средний балл должен быть положительным числом");
+						System.err.println("РЎСЂРµРґРЅРёР№ Р±Р°Р»Р» РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ РїРѕР»РѕР¶РёС‚РµР»СЊРЅС‹Рј С‡РёСЃР»РѕРј");
 						continue;
 					}
 					if (gpa>5)
 					{
-						System.err.println("Средний балл должен быть меньше 5");
+						System.err.println("РЎСЂРµРґРЅРёР№ Р±Р°Р»Р» РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ РјРµРЅСЊС€Рµ 5");
 						continue;
 					}
 					
@@ -108,7 +108,7 @@ public class AddStudentInteractive implements AddStudent  {
 				break;
 					
 			} catch (IOException e) {
-				System.err.println("Средний балл должен быть числом. Попробуйте еще раз.");
+				System.err.println("РЎСЂРµРґРЅРёР№ Р±Р°Р»Р» РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ С‡РёСЃР»РѕРј. РџРѕРїСЂРѕР±СѓР№С‚Рµ РµС‰Рµ СЂР°Р·.");
 			}
 		}
 		

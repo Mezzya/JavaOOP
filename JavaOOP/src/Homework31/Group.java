@@ -24,6 +24,12 @@ public class Group implements Voenkom {
 	public Group() {
 		super();
 	}
+	
+	
+
+	public TreeSet<Student> getStudents() {
+		return set;
+	}
 
 	public String getGroupName() {
 		return groupName;
@@ -41,23 +47,19 @@ public class Group implements Voenkom {
 		this.univerName = univerName;
 	}
 
-	public TreeSet<Student> getStudentsSet() {
-		return set;
-	}
-
 	public void add(AddStudent as) {
 		as.addstudent(this);
 	}
 
 	public void addStudent(Student student) throws OutOfFreePlacesException {
 		if (set.size() < 10) {
-			// �������� ����� � ������ ����. ���������
+			// Свободно место в группе есть. Зачисляем
 			set.add(student);
-			System.out.println(student + " �������� � " + groupName);
+			System.out.println(student + " зачислен в " + groupName);
 			return;
 		}
 
-		// ������ ���� ��������� ����
+		// Похоже мест свободных нету
 
 		throw new OutOfFreePlacesException();
 
@@ -72,30 +74,30 @@ public class Group implements Voenkom {
 
 	public void delStudent(Student student) {
 		if (set.contains(student)) {
-			// ����� � ������� ���
+			// Нашли и удаляем его
 			set.remove(student);
-			System.out.println(student + " ������� ��������");
+			System.out.println(student + " успешно отчислен");
 			return;
 
 		}
 
-		System.out.println(student + " � ������ �� ������");
+		System.out.println(student + " в группе не найден");
 
 	}
 
-	// ���� ����������
+	// Наше исключение
 	class OutOfFreePlacesException extends Exception {
 
 		@Override
 		public String getMessage() {
 			// TODO Auto-generated method stub
-			return "������ �����������";
+			return "Группа переполнена";
 		}
 
 	}
 
 	public void sort(int key) {
-		// 1- �� �����, 2 �� �������, 3 �� ��������, 4 �� �������� �����
+		// 1- по имени, 2 по фамилии, 3 по возрасту, 4 по среднему баллу
 		TreeSet setTemp = null;
 		;
 
@@ -119,7 +121,7 @@ public class Group implements Voenkom {
 		}
 
 		if (setTemp != null) {
-			// ����� ���������� ������
+			// Выбор сортировки сделан
 			setTemp.addAll(set);
 			set = setTemp;
 		}
@@ -143,9 +145,9 @@ public class Group implements Voenkom {
 		double s = 0;
 
 		StringBuilder sb = new StringBuilder();
-		sb.append("����������� " + getUniverName() + " " + groupName);
+		sb.append("Университет " + getUniverName() + " " + groupName);
 		sb.append(System.lineSeparator());
-		sb.append("������ ������ " + set.size() + " �� 10 : " + System.lineSeparator() + System.lineSeparator());
+		sb.append("Состав группы " + set.size() + " из 10 : " + System.lineSeparator() + System.lineSeparator());
 
 		for (Student student : set) {
 			sb.append(student);
@@ -158,8 +160,8 @@ public class Group implements Voenkom {
 		}
 		sb.append(System.lineSeparator());
 
-		sb.append("���������: " + i + System.lineSeparator() + "���������: " + k + System.lineSeparator()
-				+ "������� ���� � ������: " + s / set.size());
+		sb.append("Отличники: " + i + System.lineSeparator() + "Двоечники: " + k + System.lineSeparator()
+				+ "Средний балл в группе: " + s / set.size());
 
 		return sb.toString();
 	}

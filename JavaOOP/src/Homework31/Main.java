@@ -9,30 +9,31 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		Student stu1 = new Student("���", "������", true, 21, 3);
-		Student stu2 = new Student("���", "������", true, 18, 5);
-		Student stu3 = new Student("�����", "�������", true, 16, 3);
-		Student stu4 = new Student("�����", "���", true, 12, 1);
-		Student stu5 = new Student("�������", "����������", true, 25, 3);
-		Student stu6 = new Student("����", "������", true, 18, 4);
-		Student stu7 = new Student("�����", "���", true, 18, 5);
-		Student stu8 = new Student("�������", "�����", true, 21, 4);
-		Student stu9 = new Student("����������", "��������", true, 19, 5);
 
-		Student stu11 = new Student("������", "��������", true, 18, 2);
+		Student stu1 = new Student("Чак", "Норрис", true, 21, 3);
+		Student stu2 = new Student("Шон", "Конери", true, 18, 5);
+		Student stu3 = new Student("Майкл", "Дудиков", true, 16, 3);
+		Student stu4 = new Student("Костя", "Дзю", true, 12, 1);
+		Student stu5 = new Student("Арнольд", "Шварцнегер", true, 25, 3);
+		Student stu6 = new Student("Брюс", "Виллис", true, 18, 4);
+		Student stu7 = new Student("Джеки", "Чан", true, 18, 5);
+		Student stu8 = new Student("Николас", "Кейдж", true, 21, 4);
+		Student stu9 = new Student("Сильвестер", "Сталлоне", true, 19, 5);
 
-		Group group = new Group("������ �5", "���");
+		Student stu11 = new Student("Адольф", "Лунгрэнд", true, 18, 2);
 
-		// ������� ������� �������� � ������������ ���������
+		Group group = new Group("Группа №5", "КПИ");
 
-		// Student stuTwo = new Student("������", "����", true, -18);
-		// Student stuTre = new Student("������", "����", true, 160, 4);
+		// Попытка создать студента с неправильным возрастом
 
-		// ������� ������� �������� � �� ������� ������ �� ���������� �
-		// ���������� �� 0 �� 5
+		// Student stuTwo = new Student("Иванов", "Иван", true, -18);
+		// Student stuTre = new Student("Иванов", "Иван", true, 160, 4);
 
-		// Student stuTwo = new Student("������", "����", true, 18, -4);
-		// Student stuTwo = new Student("������", "����", true, 18, 10);
+		// Попытка создать студента с со средним баллом не попадающим в
+		// промежуток от 0 до 5
+
+		// Student stuTwo = new Student("Иванов", "Иван", true, 18, -4);
+		// Student stuTwo = new Student("Иванов", "Иван", true, 18, 10);
 
 		try {
 			group.addStudent(stu1);
@@ -44,9 +45,9 @@ public class Main {
 			group.addStudent(stu7);
 			group.addStudent(stu8);
 			group.addStudent(stu9);
-			 // � ����� � ��� ��������
-//			group.addStudent(new Student("����", "�����", false, 16, 4));
-			// � ���� �� ������ ����� ���
+			 // А можно и так добавить
+//			group.addStudent(new Student("Лара", "Крофт", false, 16, 4));
+			// А этот не влезит места нет
 //			group.addStudent(stu11);
 			
 //			group.add(new AddStudentInteractive());
@@ -56,27 +57,32 @@ public class Main {
 
 		}
 
-//		������ ��������
+//		Удалим студента
 		group.delStudent(stu9);
 		group.delStudent(stu9);
 
 		group.delStudent(stu11);
 
-//		���������� �� ����� (1-4 ���, �������, ���, �������, ������� ����)
+//		Сортировка по полям (1-4 Имя, Фамилия, пол, возраст, средний балл)
 		group.sort(4);
 		
 		
-//		�������
+//		Военком
 		System.out.println(Arrays.toString(group.getArrayForVoenkom()));
 		
 		System.out.println();
 		
-//		����� ������
+//		Вывод группы
 		System.out.println(group);
-		
 //		Сохраним в файл
 		group.save(new SaverToFile());
+		
+//		Загрузим группу из файла
+		Group groupTwo = new SaverToFile().load();
+		System.out.println();
+		System.out.println(groupTwo);
 
+		
 	}
 
 }
