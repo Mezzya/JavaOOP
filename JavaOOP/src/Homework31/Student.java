@@ -39,4 +39,30 @@ public class Student extends Human {
 		return "Студент " + super.toString() + " gpa=" + gpa + "";
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		long temp;
+		temp = Double.doubleToLongBits(gpa);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Student other = (Student) obj;
+		if (Double.doubleToLongBits(gpa) != Double.doubleToLongBits(other.gpa))
+			return false;
+		return true;
+	}
+	
+	
+
 }
