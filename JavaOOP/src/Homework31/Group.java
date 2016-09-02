@@ -41,19 +41,23 @@ public class Group implements Voenkom {
 		this.univerName = univerName;
 	}
 
+	public TreeSet<Student> getStudentsSet() {
+		return set;
+	}
+
 	public void add(AddStudent as) {
 		as.addstudent(this);
 	}
 
 	public void addStudent(Student student) throws OutOfFreePlacesException {
 		if (set.size() < 10) {
-			// Свободно место в группе есть. Зачисляем
+			// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 			set.add(student);
-			System.out.println(student + " зачислен в " + groupName);
+			System.out.println(student + " пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ " + groupName);
 			return;
 		}
 
-		// Похоже мест свободных нету
+		// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 
 		throw new OutOfFreePlacesException();
 
@@ -68,30 +72,30 @@ public class Group implements Voenkom {
 
 	public void delStudent(Student student) {
 		if (set.contains(student)) {
-			// Нашли и удаляем его
+			// пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ
 			set.remove(student);
-			System.out.println(student + " успешно отчислен");
+			System.out.println(student + " пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
 			return;
 
 		}
 
-		System.out.println(student + " в группе не найден");
+		System.out.println(student + " пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ");
 
 	}
 
-	// Наше исключение
+	// пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	class OutOfFreePlacesException extends Exception {
 
 		@Override
 		public String getMessage() {
 			// TODO Auto-generated method stub
-			return "Группа переполнена";
+			return "пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
 		}
 
 	}
 
 	public void sort(int key) {
-		// 1- по имени, 2 по фамилии, 3 по возрасту, 4 по среднему баллу
+		// 1- пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, 2 пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, 3 пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, 4 пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 		TreeSet setTemp = null;
 		;
 
@@ -115,7 +119,7 @@ public class Group implements Voenkom {
 		}
 
 		if (setTemp != null) {
-			// Выбор сортировки сделан
+			// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 			setTemp.addAll(set);
 			set = setTemp;
 		}
@@ -139,9 +143,9 @@ public class Group implements Voenkom {
 		double s = 0;
 
 		StringBuilder sb = new StringBuilder();
-		sb.append("Университет " + getUniverName() + " " + groupName);
+		sb.append("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ " + getUniverName() + " " + groupName);
 		sb.append(System.lineSeparator());
-		sb.append("Состав группы " + set.size() + " из 10 : " + System.lineSeparator() + System.lineSeparator());
+		sb.append("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ " + set.size() + " пїЅпїЅ 10 : " + System.lineSeparator() + System.lineSeparator());
 
 		for (Student student : set) {
 			sb.append(student);
@@ -154,10 +158,15 @@ public class Group implements Voenkom {
 		}
 		sb.append(System.lineSeparator());
 
-		sb.append("Отличники: " + i + System.lineSeparator() + "Двоечники: " + k + System.lineSeparator()
-				+ "Средний балл в группе: " + s / set.size());
+		sb.append("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: " + i + System.lineSeparator() + "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: " + k + System.lineSeparator()
+				+ "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: " + s / set.size());
 
 		return sb.toString();
+	}
+	
+	public void save(Saver saver)
+	{
+		saver.save(this);
 	}
 
 }

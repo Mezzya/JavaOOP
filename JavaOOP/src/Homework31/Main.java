@@ -9,30 +9,30 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		Student stu1 = new Student("Чак", "Норрис", true, 21, 3);
-		Student stu2 = new Student("Шон", "Конери", true, 18, 5);
-		Student stu3 = new Student("Майкл", "Дудиков", true, 16, 3);
-		Student stu4 = new Student("Костя", "Дзю", true, 12, 1);
-		Student stu5 = new Student("Арнольд", "Шварцнегер", true, 25, 3);
-		Student stu6 = new Student("Брюс", "Виллис", true, 18, 4);
-		Student stu7 = new Student("Джеки", "Чан", true, 18, 5);
-		Student stu8 = new Student("Николас", "Кейдж", true, 21, 4);
-		Student stu9 = new Student("Сильвестер", "Сталлоне", true, 19, 5);
+		Student stu1 = new Student("пїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅ", true, 21, 3);
+		Student stu2 = new Student("пїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅ", true, 18, 5);
+		Student stu3 = new Student("пїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ", true, 16, 3);
+		Student stu4 = new Student("пїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅ", true, 12, 1);
+		Student stu5 = new Student("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", true, 25, 3);
+		Student stu6 = new Student("пїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅ", true, 18, 4);
+		Student stu7 = new Student("пїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅ", true, 18, 5);
+		Student stu8 = new Student("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅ", true, 21, 4);
+		Student stu9 = new Student("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", true, 19, 5);
 
-		Student stu11 = new Student("Адольф", "Лунгрэнд", true, 18, 2);
+		Student stu11 = new Student("пїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", true, 18, 2);
 
-		Group group = new Group("Группа №5", "КПИ");
+		Group group = new Group("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ5", "пїЅпїЅпїЅ");
 
-		// Попытка создать студента с неправильным возрастом
+		// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
-		// Student stuTwo = new Student("Иванов", "Иван", true, -18);
-		// Student stuTre = new Student("Иванов", "Иван", true, 160, 4);
+		// Student stuTwo = new Student("пїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅ", true, -18);
+		// Student stuTre = new Student("пїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅ", true, 160, 4);
 
-		// Попытка создать студента с со средним баллом не попадающим в
-		// промежуток от 0 до 5
+		// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ
+		// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ 0 пїЅпїЅ 5
 
-		// Student stuTwo = new Student("Иванов", "Иван", true, 18, -4);
-		// Student stuTwo = new Student("Иванов", "Иван", true, 18, 10);
+		// Student stuTwo = new Student("пїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅ", true, 18, -4);
+		// Student stuTwo = new Student("пїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅ", true, 18, 10);
 
 		try {
 			group.addStudent(stu1);
@@ -44,35 +44,38 @@ public class Main {
 			group.addStudent(stu7);
 			group.addStudent(stu8);
 			group.addStudent(stu9);
-			 // А можно и так добавить
-//			group.addStudent(new Student("Лара", "Крофт", false, 16, 4));
-			// А этот не влезит места нет
+			 // пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+//			group.addStudent(new Student("пїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅ", false, 16, 4));
+			// пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ
 //			group.addStudent(stu11);
 			
-			group.add(new AddStudentInteractive());
+//			group.add(new AddStudentInteractive());
 
 		} catch (OutOfFreePlacesException e) {
 			System.out.println(e);
 
 		}
 
-//		Удалим студента
+//		пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 		group.delStudent(stu9);
 		group.delStudent(stu9);
 
 		group.delStudent(stu11);
 
-//		Сортировка по полям (1-4 Имя, Фамилия, пол, возраст, средний балл)
+//		пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ (1-4 пїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ)
 		group.sort(4);
 		
 		
-//		Военком
+//		пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 		System.out.println(Arrays.toString(group.getArrayForVoenkom()));
 		
 		System.out.println();
 		
-//		Вывод группы
+//		пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 		System.out.println(group);
+		
+//		РЎРѕС…СЂР°РЅРёРј РІ С„Р°Р№Р»
+		group.save(new SaverToFile());
 
 	}
 
