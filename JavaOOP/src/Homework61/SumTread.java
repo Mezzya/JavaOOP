@@ -2,36 +2,43 @@ package Homework61;
 
 public class SumTread implements Runnable {
 
-	int start, end;
-	
+	private int start, end;
+	private Thread tr;
+	private int sum;
+	private int[] array;
 	public SumTread() {
 		// TODO Auto-generated constructor stub
 	}
 	
 
-	public SumTread(int start, int end) {
+	public SumTread(int start, int end, int[] array) {
 		super();
 		this.start = start;
 		this.end = end;
+		this.array = array;
+		tr = new Thread(this);
 	}
 	
-	
 
+	public Thread getTr() {
+		return tr;
+	}
 
-	public int getEnd() {
-		return end;
+	public void sum(){
+		for (int i=start;i<=end;i++)
+		{
+			sum+=array[i];
+		}
+		
 	}
 
 
-	public void setEnd(int end) {
-		this.end = end;
-	}
 
 
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
-		start=100;
+		sum();
 	}
 	
 	
