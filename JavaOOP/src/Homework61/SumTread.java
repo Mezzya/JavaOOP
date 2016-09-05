@@ -20,6 +20,21 @@ public class SumTread implements Runnable {
 	}
 	
 
+	public int getSum() {
+		return sum;
+	}
+
+
+	public int getStart() {
+		return start;
+	}
+
+
+	public int getEnd() {
+		return end;
+	}
+
+
 	public Thread getTr() {
 		return tr;
 	}
@@ -39,7 +54,16 @@ public class SumTread implements Runnable {
 	public void run() {
 		// TODO Auto-generated method stub
 		sum();
+		
 	}
+
+
+	@Override
+	public String toString() {
+		return "SumTread [start=" + start + ", end=" + end + ", tr=" + tr + ", sum=" + sum + "]";
+	}
+	
+	
 	
 	
 
