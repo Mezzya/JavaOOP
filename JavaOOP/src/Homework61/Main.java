@@ -1,97 +1,106 @@
 package Homework61;
 
 import java.io.IOException;
+import java.math.BigInteger;
 import java.util.Arrays;
+import java.util.Random;
 
 public class Main {
+	static int[] array = new int[100000000];
+	static int threadCount;
+	static BigInteger sum;
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] array = new int[10];
 
+		randomFillArray();
+		oneThreadSum();
+
+		int threadCount = 16; // Количество потоков
+
+		multThreadSum();
+
+		//
+
+	}
+
+	static void randomFillArray() {
+		
+		Random r = new Random();
 		for (int i = 0; i < array.length; i++) {
-			array[i] = i;
+			array[i] = r.nextInt(100)*10000;
 		}
 
-		int sum = 0;
+	}
+
+	static void oneThreadSum() {
+		sum = new BigInteger("0");
 
 		long startTime = System.currentTimeMillis();
 		for (int i = 0; i < array.length; i++) {
-			sum += array[i];
+			sum=sum.add(new BigInteger(""+array[i]));
+			
 		}
 		long endTime = System.currentTimeMillis();
 
-		System.out.println("Реультат =" + sum);
+		System.out.println("Реультат =" + sum.toString());
 		System.out.println("Время выполнения " + (endTime - startTime) + "мс.");
-		//
-		sum=0;
+	}
 
-		int threadCont = 5; // Количество потоков
-		SumTread[] sumTreads = new SumTread[threadCont];
-
-		int size = array.length / threadCont;
+	static void multThreadSum() {
 		
-		int pos=0;
-		int count=0;
-		startTime = System.currentTimeMillis();
-		while ((pos+size)<array.length)
-		{
-//			System.out.println("sart=" + pos + " end=" + (pos+=size));
-			sumTreads[count]=new SumTread(pos, pos+=size, array);
-			sumTreads[count].getTr().start();
-			pos+=1;
-			count++;
+		sum = new BigInteger("0");
+
+		int threadCount = 16;
+		SumTread[] sumTreads = new SumTread[threadCount];
+
+		int size = array.length / threadCount;
+
+		System.out.println("");
+		System.out.println("Размер блока=" + size);
+
+		if (size < 2)
+			throw new IllegalArgumentException("Диапазон разбития меньше двух элементов");
+
+		// Разбиваем на диапазон на количество потоков и создаем их и запускаем
+		int start = 0;
+		int end = 0;
+		long startTime = System.currentTimeMillis();
+
+		for (int i = 0; i < threadCount; i++) {
+			if (i == 0) {
+				start = 0;
+				end += size + (array.length % threadCount - 1);
+			} else {
+				start = end + 1;
+				end += size;
+			}
+
+			// System.out.println("start="+start+" end="+end);
+			sumTreads[i] = new SumTread(start, end, array);
+			sumTreads[i].getTr().start();
 		}
-		
-		sumTreads[count]=new SumTread(pos, array.length-1, array);
-		sumTreads[count].getTr().start();
-		
+
+		// Ждем мейнов все потоки
 		for (int i = 0; i < sumTreads.length; i++) {
-			try{
-				sumTreads[i].getTr().join();		
-			} catch(InterruptedException e)
-			{
+			try {
+				sumTreads[i].getTr().join();
+			} catch (InterruptedException e) {
 				System.out.println(e);
 			}
-			
-		
-		}
-		
-		
-		for (int i = 0; i < sumTreads.length; i++) {
-			
-			sum+=sumTreads[i].getSum();
-		}
-		endTime = System.currentTimeMillis();
-		
-//		System.out.println("sart=" + (pos) + " end=" + (array.length-1));
-		
 
-	
+		}
+
+		// Посчет результатов и вывод
+		for (int i = 0; i < sumTreads.length; i++) {
+
+			sum = sum.add(sumTreads[i].getSum());
+		}
+		long endTime = System.currentTimeMillis();
+
 		System.out.println("Реультат с потоками =" + sum);
 		System.out.println("Время выполнения потоками " + (endTime - startTime) + "мс.");
-		
-//		System.out.println("sart=" + (pos+1) + " end=" + array.length);
-			
-						
-			
-			
-			
 
-
-		
-		
-		
-		
-		
-		
-		
-//		System.out.println("z=" + z + " k=" + k);
-
-		
-		
-		
-		
 	}
 
 }

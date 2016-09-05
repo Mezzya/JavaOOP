@@ -1,10 +1,12 @@
 package Homework61;
 
+import java.math.BigInteger;
+
 public class SumTread implements Runnable {
 
 	private int start, end;
 	private Thread tr;
-	private int sum;
+	private BigInteger sum;
 	private int[] array;
 	public SumTread() {
 		// TODO Auto-generated constructor stub
@@ -16,11 +18,12 @@ public class SumTread implements Runnable {
 		this.start = start;
 		this.end = end;
 		this.array = array;
+		sum = new BigInteger("0");
 		tr = new Thread(this);
 	}
 	
 
-	public int getSum() {
+	public BigInteger getSum() {
 		return sum;
 	}
 
@@ -42,7 +45,7 @@ public class SumTread implements Runnable {
 	public void sum(){
 		for (int i=start;i<=end;i++)
 		{
-			sum+=array[i];
+			sum= sum.add(new BigInteger(""+array[i]));
 		}
 		
 	}
