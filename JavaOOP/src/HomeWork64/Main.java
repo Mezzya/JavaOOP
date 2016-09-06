@@ -41,6 +41,7 @@ public class Main {
 				System.out.println(e);
 			}
 		}
+		exec.shutdown();
 		
 		System.out.println("END");
 
