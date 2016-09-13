@@ -3,8 +3,7 @@ package HomeWork93;
 public class CharCount {
 	private long count = 0;// Абсолютная частота
 	private char bukva; // Сам символ
-	private double relFrec =0;
-	
+	private double relFrec = 0; 
 
 	public CharCount(char bukva) {
 		super();
@@ -23,9 +22,7 @@ public class CharCount {
 	public char getBukva() {
 		return bukva;
 	}
-	
-	
-	
+
 	public double getRelFrec() {
 		return relFrec;
 	}
@@ -33,10 +30,9 @@ public class CharCount {
 	public void inc() {
 		count++;
 	}
-	
-	public void calcrelFrec(long size)
-	{
-		relFrec = (double)size/count;
+
+	public void calcrelFrec(long size) {
+		relFrec = (double) size / count;
 	}
 
 	/*
@@ -75,7 +71,5 @@ public class CharCount {
 	public String toString() {
 		return "CharCount [count=" + count + ", bukva=" + bukva + ", relFrec=" + relFrec + "]";
 	}
-
-	
 
 }
