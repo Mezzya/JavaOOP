@@ -1,11 +1,10 @@
 package HomeWork73;
 
 import java.io.File;
-import java.util.ArrayList;
+
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 
 public class Main {
 
@@ -22,10 +21,10 @@ public class Main {
 				System.out.println(tmp);
 			}
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		} catch (ExecutionException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 
