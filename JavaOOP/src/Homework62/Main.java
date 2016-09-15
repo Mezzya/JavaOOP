@@ -1,4 +1,4 @@
-package Homework61;
+package Homework62;
 
 import java.io.IOException;
 import java.math.BigInteger;
@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
-	static int[] array = new int[100000000];
+	static BigInteger[] array = new BigInteger[10000000];
 	static int threadCount;
 	static BigInteger sum;
 
@@ -16,7 +16,7 @@ public class Main {
 		randomFillArray();
 		oneThreadSum();
 
-		int threadCount = 16; // Количество потоков
+		int threadCount = 4; // Количество потоков
 
 		multThreadSum();
 
@@ -28,7 +28,7 @@ public class Main {
 		
 		Random r = new Random();
 		for (int i = 0; i < array.length; i++) {
-			array[i] = r.nextInt(100)*10000;
+			array[i] = new BigInteger(""+20000); /*r.nextInt(20)*1000;*/
 		}
 
 	}

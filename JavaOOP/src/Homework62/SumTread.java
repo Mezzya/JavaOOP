@@ -1,4 +1,4 @@
-package Homework61;
+package Homework62;
 
 import java.math.BigInteger;
 
@@ -7,13 +7,13 @@ public class SumTread implements Runnable {
 	private int start, end;
 	private Thread tr;
 	private BigInteger sum;
-	private int[] array;
+	private BigInteger[] array;
 	public SumTread() {
 		// TODO Auto-generated constructor stub
 	}
 	
 
-	public SumTread(int start, int end, int[] array) {
+	public SumTread(int start, int end, BigInteger[] array) {
 		super();
 		this.start = start;
 		this.end = end;
