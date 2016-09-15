@@ -24,6 +24,7 @@ public class Main {
 		slovar.add("i", "я");
 		slovar.add("live", "живу");
 
+		
 		// Не забываем сохранить словарь в файл
 		slovar.save();
 

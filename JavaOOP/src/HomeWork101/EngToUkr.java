@@ -24,9 +24,11 @@ public class EngToUkr {
 				BufferedWriter brUkr = new BufferedWriter(new FileWriter(ukrOut))) {
 			String eng;
 			while ((eng = brEng.readLine()) != null) {
+				
 				eng = eng.toLowerCase();
 				String[] str = eng.split(" ");
 				String transl = "";
+				
 				for (String string : str) {
 					if (slovar.getPerevod(string)!=null) {
 						transl += slovar.getPerevod(string) + " ";
@@ -34,6 +36,7 @@ public class EngToUkr {
 						transl += string + " ";
 					}
 				}
+				
 				brUkr.write(transl);
 				brUkr.newLine();
 

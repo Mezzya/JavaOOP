@@ -46,6 +46,7 @@ public class Slovar implements Serializable {
 
 	}
 
+	
 	public static Slovar load() {
 
 		Slovar sl = null;
