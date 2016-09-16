@@ -127,6 +127,15 @@ public class Group implements Voenkom {
 		}
 
 	}
+	
+//	StreamAPI
+	public Student findStudent(String lastName)
+	{
+		
+		return set.stream().filter(x->x.getLastName().startsWith(lastName)).findFirst().get();
+		
+		
+	}
 
 	@Override
 	public Student[] getArrayForVoenkom() {

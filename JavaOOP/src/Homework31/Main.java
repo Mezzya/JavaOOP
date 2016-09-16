@@ -81,6 +81,10 @@ public class Main {
 		Group groupTwo = new SaverToFile().load();
 		System.out.println();
 		System.out.println(groupTwo);
+		
+		
+//		Stream API
+		System.out.println(groupTwo.findStudent("Ви"));
 
 		
 	}
